@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Языки программирования</title>
+    <style>
+        .menu {
+            margin: 15px 0;
+        }
+        .menu a {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #e0e0e0;
+            color: blue;
+            text-decoration: none;
+            margin: 3px;
+            border-radius: 4px;
+        }
+        .menu a:hover {
+            background-color: #c0c0ff;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="createMenu()">Показать разработчиков</button>
+
+<div class="content">
+    <h2>История создания языков программирования</h2>
+    <p>Python создал в 1989-1991 годах голландский программист <a href="#">Гвидо ван Россум</a>.</p>
+    <p>C разработал в 1969-1973 годах сотрудник Bell Labs <a href="#">Деннис Ритч</a>.</p>
+    <p>Java разработал в 1990-1996 годах канадский программист <a href="#">Джеймс Гослинг</a>.</p>
+    <p>JavaScript разработан в 1996 году, автор - американский программист <a href="#">Брендан Айк</a>.</p>
+    <p>Prolog разработан в 1972 году, автор - французский программист <a href="#">Ален Колмероэ</a>.</p>
+    <p>Ruby разработан в 1993-1995 годах, автор - японский программист <a href="#">Юкихиро Мацумото</a>.</p>
+
+    <h3>История создания по годам</h3>
+    <ul>
+        <li>1969–1973 годы:
+            <ol>
+                <li>C</li>
+                <li>Prolog</li>
+            </ol>
+        </li>
+        <li>1989–1990 годы:
+            <ol>
+                <li>Python</li>
+                <li>Haskell</li>
+            </ol>
+        </li>
+        <li>1990–1996 годы:
+            <ol>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>Ruby</li>
+            </ol>
+        </li>
+    </ul>
+
+    <h3>Топ браузеров</h3>
+</div>
+
+<script>
+    function createMenu() {
+        const content = document.querySelector('.content');
+        const paragraphs = content.querySelectorAll('p');
+        const developers = [];
+
+        // Собираем текст всех <a> внутри <p>
+        paragraphs.forEach(p => {
+            const link = p.querySelector('a');
+            if (link) {
+                developers.push(link.textContent.trim());
+            }
+        });
+
+        if (developers.length === 0) return;
+
+        const menu = document.createElement('div');
+        menu.className = 'menu';
+
+        developers.forEach(name => {
+            const a = document.createElement('a');
+            a.href = '#';
+            a.textContent = name;
+            menu.appendChild(a);
+        });
+
+        const browserHeader = Array.from(content.querySelectorAll('h3'))
+        .find(h => h.textContent.includes('Топ браузеров'));
+
+        if (browserHeader) {
+            content.insertBefore(menu, browserHeader);
+        }
+    }
+</script>
+
+</body>
+</html>

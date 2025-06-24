@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://d3js.org/d3.v7.min.js"> </script>
+    <script src="js/image.js"></script>
+</head>
+
+<body>
+    <form>
+    <h3 id="scaleInputs">Масштаб
+        <label for="scaleX">по x:</label>
+        <input type="number" id="scaleX" value="1" max=10 min=0.1>до
+        <input type="number" id="scaleXTo" value="1" max=10 min=0.1><br>
+        <label for="scaleY">по y:</label>
+        <input type="number" id="scaleY" value="1" max=10 min=0.1>до
+        <input type="number" id="scaleYTo" value="1" max=10 min=0.1><br>
+    
+        увеличивать от:
+        <input type="number" id="scaleFrom" value="1" step="0.1" min="0.1" max="10"> до:
+        <input type="number" id="scaleTo" value="1" step="0.1" min="0.1" max="10">
+    </h3>
+        <label>
+            Тип анимации:
+            <select id="selectTypeAnimation">
+                <option>Linear</option>
+                <option>Bounce</option>
+            </select>
+        </label>
+        <input type="number" id="timeAnimation" value="1000" min=1 max=20000>
+    <input type="button" value="Запустить" id="btnAnimation" onclick="runAnimation(this.form)">
+    <input type="button" value="Сбросить" onclick=clearImg() id="btnClear">
+    </form><br>
+    <svg></svg>
+    <script src="js/main.js"></script>
+    <script src="js/path.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title> Трансформация и анимация</title>
+  <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+  <script src="http://d3js.org/d3.v7.min.js"> </script>
+  <script src="JavaScript/main.js"></script>
+  <script src="JavaScript/image.js"></script>
+  <script src="JavaScript/path.js"></script>
+</head>
+<body>
+
+<form id="setting">
+  <div>
+    <p>Координаты рисунка<br>
+
+      <label for="cx">x: </label>
+      <input type="number" id="cx" value="300" max="600" min="0">
+      <label for="cxEnd">до: </label>
+      <input type="number" id="cxEnd" value="300" max="600" min="0"><br>
+      <label for="cy">y: </label>
+      <input type="number" id="cy" value="300" max="600" min="0">
+      <label for="cyEnd">до: </label>
+      <input type="number" id="cyEnd" value="300" max="600" min="0">
+
+    </p>
+
+    <p>Пути перемещения<br>
+      <select id="pathSelect">
+        <option value="0">Буквой "Г"</option>
+        <option value="1">По кругу</option>
+      </select>
+    </p>
+
+    <p>Масштаб<br>
+      <label for="xscale">по x: </label>
+      <input type="number" id="xscale" value="1" max="10" min="0">
+      <label for="xscaleEnd">до: </label>
+      <input type="number" id="xscaleEnd" value="1" max="10" min="0"><br>
+      <label for="yscale">по y: </label>
+      <input type="number" id="yscale" value="1" max="10" min="0">
+      <label for="yscaleEnd">до: </label>
+      <input type="number" id="yscaleEnd" value="1" max="10" min="0">
+    </p>
+    <p>Поворот<br>
+      <label for="angle">угол: </label>
+      <input type="number" id="angle" value="0" max="360" min="0">
+      <label for="angleEnd">до: </label>
+      <input type="number" id="angleEnd" value="0" max="360" min="0"><br>
+    </p>
+  </div>
+  <p>
+    <input type="button" value="Нарисовать" id="drawButton" onclick="draw(this.form)">
+    <input type="button" value="Очистить" onclick="clearForm(this.form)">
+  </p>
+
+  <p>
+    <input type="checkbox" id="animationCbx"> Включить анимацию? <select id="animationType"></select><br>
+    <input type="checkbox" id="pathCbx"> Перемещение вдоль пути?<br>
+    <input type="button" value="Анимировать" id="animButton" onclick="runAnimation(this.form)">
+  </p>
+</form>
+
+<svg></svg>
+
+</body>
