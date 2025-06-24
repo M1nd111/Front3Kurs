@@ -1,0 +1,171 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.variant, .header, .footer, .section h2 {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+h2{
+    text-align: center;
+}
+.variant, .title, .menu-item {
+    font-weight: bold;
+}
+
+.header {
+    background-color: #f0f0f0;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.menu {
+    display: inline-block;
+}
+
+.menu-item {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ccc;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.menu-item.active {
+    background-color: #000;
+    color: #fff000;
+}
+
+.main-image img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+}
+
+.sub-images {
+    margin-top: 1px;
+    text-align: center; 
+}
+
+.sub-image {
+    display: inline-block; 
+    width: 32%; 
+    color: white;
+}
+
+.sub-image img {
+    width: 100%; 
+    height: auto;
+}
+
+.content {
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.aside-image-left  {
+    width: auto;
+    height: auto; 
+    overflow: hidden;
+}
+
+.text-with-image-left{
+    display: inline-block;
+    overflow: clip;
+}
+.text-with-image-left p {
+    display: inline-block;
+    width: calc(100% - 300px); 
+    vertical-align: top;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    text-align: justify;
+    position: relative;
+}
+
+.footer-text {
+    display: inline-block;
+}
+
+.contacts {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+}
+
+
+
+
+
+.info-mrgbottom {
+	margin-bottom: 10px;
+}
+
+.info-short-header {
+	width: 100%;
+	#border: red solid;
+
+}
+
+.info-short-header span {
+	margin-left: 5%;
+}
+
+.info-short-header-box {
+	width: 30%;
+	height: 100%;
+	float: right;
+	#border: blue solid;
+	box-sizing: border-box;	
+}
+
+.info-short-header-box img {
+	width: 100%;
+	height: 100px;
+}
+.info-short-header-box-left img {
+	width: 100%;
+	height: 100px;
+}
+.info-short-header-box-left {
+	width: 37%;
+	height: 100%;
+	float: left;
+	#border: blue solid;
+	box-sizing: border-box;	
+}
+
+.info-short-header-left {
+	width: 100%;
+    height:330px;
+	#border: red solid;
+}
+.info-short-header-box-right {
+	width: 45%;
+	height: 100%;
+	float: left;
+	#border: blue solid;
+	box-sizing: border-box;	
+}
+
+.info-short-header-right {
+	width: 100%;
+    height:330px;
+	#border: red solid;
+}
