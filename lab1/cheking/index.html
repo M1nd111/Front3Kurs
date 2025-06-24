@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <h3>Языки программирования</h3>
+    <div id="test">Python</div>
+    <div>C</div>
+    <div><a href="#">Java</a></div>
+    <h3 class="bold big">История создания</h3>
+    <div class="bold test">
+        <div>Python создан в 1989-1991.</div>
+        <div>C разработан в 1969-1973 годах</div>
+        <div>Java разработан в 1990-1996 годах.</div>
+        <div>JavaScript разработан в 1996 году.</div>
+        <div>Prolog разработан в 1972 году.</div>
+    </div>
+    <h3>Разработчики</h3>
+    <ol class="test">
+        <li>Брендан Айк</li>
+    </ol>
+    <button onclick="changePage('test')">Изменить</button>
+</body>
+</html>
+
+<script>
+    function changePage(id) {
+        const element = document.getElementById(id);
+    console.log(element)
+            let children = element.children;
+            let count = children.length;
+
+            if (count === 0) {
+                // Если нет детей, создаем 3 новых div
+                for (let i = 0; i < 3; i++) {
+                    const parent = document.getElementById('test');
+                    const child = document.createElement('div');
+                    child.textContent = 'Новый элемент';
+                    parent.appendChild(child);
+                }
+            } else if (count < 3) {
+                // Если детей меньше 3, клонируем первый ребенок
+                let firstChild = children[0];
+                let newChild = firstChild.cloneNode(true);
+                element.appendChild(newChild);
+            }
+    }
+</script>

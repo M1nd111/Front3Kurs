@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор трапеции</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function updateInputFields() {
+            let inputType = document.querySelector('input[name="inputType"]:checked').value;
+            let extraLabel1 = document.getElementById("extraLabel1");
+            let extraLabel2 = document.getElementById("extraLabel2");
+            let trapezoidImage = document.getElementById("trapezoidImage");
+
+            if (inputType === "side") {
+                extraLabel1.innerHTML = "Ребро C: <input type='number' id='side1'>";
+                extraLabel2.innerHTML = "Ребро D: <input type='number' id='side2'>";
+                trapezoidImage.src = "trap1.png";
+            } else {
+                extraLabel1.innerHTML = "Угол α: <input type='number' id='angle1'>";
+                extraLabel2.innerHTML = "Угол β: <input type='number' id='angle2'>";
+                trapezoidImage.src = "trap2.png";
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <form id="triangleForm">
+        <label>
+            <input type="radio" name="inputType" value="side" checked onchange="updateInputFields()">
+            Основание, боковые стороны и высоту к основанию
+        </label><br>
+        <label>
+            <input type="radio" name="inputType" value="angle" onchange="updateInputFields()">
+            Основание, высоту к основанию и прилежащие к основанию углы
+        </label>
+    </form>
+
+    <div id="imageContainer">
+        <img id="trapezoidImage" src="trap1.png" alt="Трапеция">
+    </div>
+
+    <div id="inputFields">
+        <label>Основание A: <input type="number" id="base1"></label>
+        <label>Высота h: <input type="number" id="base2"></label>
+        <div id="extraInput">
+            <label id="extraLabel1">Ребро C: <input type="number" id="side1"></label>
+            <label id="extraLabel2">Ребро D: <input type="number" id="side2"></label>
+        </div>
+    </div>
+
+    <h3>Что вычислить?</h3>
+    <label><input type="checkbox" id="perimeter"> Периметр</label><br>
+    <label><input type="checkbox" id="unknownSides"> Неизвестные стороны</label><br>
+    <label><input type="checkbox" id="diagonal"> Диагонали</label><br>
+    <label><input type="checkbox" id="angleBetweenDiagonals"> Угол между диагоналями</label><br>
+
+    <button type="button" onclick="calculate()">Вычислить</button>
+    <button type="button" onclick="clearFields()">Очистить</button>
+
+    <div id="output"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
