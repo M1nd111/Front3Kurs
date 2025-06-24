@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link href="css/main.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>List</title>
+  <script src="http://d3js.org/d3.v7.min.js"> </script>
+
+  <script src="js/table.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/sort.js"></script>
+</head>
+<body>
+<a href="main.html">Топ 50 авто</a><br>
+<a href="list.html">Список автомобилей</a><br>
+<hr>
+<p>
+  <details>
+  <summary>График</summary>
+  <form>
+  <table>
+    <tr align="center">
+      <th>
+        <strong>Значение по оси OX</strong>
+      </th>
+      <th>
+        <strong>Результат</strong>
+      </th>
+    </tr>
+    <tr align="left">
+      <td>
+        <label><input type="radio" name="choose OX" value="type"> Тип</label>
+      </td>
+      <td>
+        <label><input type="checkbox" name="choose result" value="maxSpeed"> Максимальная скорость</label>
+      </td>
+    </tr>
+    <tr align="left">
+      <td>
+        <label><input type="radio" name="choose OX" value="country">Страна</label>
+      </td>
+      <td>
+        <label><input type="checkbox" name="choose result" value="price">Цена</label>
+      </td>
+    </tr>
+    <tr align="left">
+      <td>
+        <label><input type="radio" name="choose OX" value="year">Год</label>
+      </td>
+    </tr>
+
+  </table>
+  </form>
+  <input type="button" value="Построить">
+</details>
+<p>
+  <details>
+  <summary>Фильтр</summary>
+  <form>
+    <label for="name">Название: <input type="text" name="name" id="name"></label><br>
+    <label for="type">Тип: <input type="text" name="type" id="type"></label><br>
+    <label for="country">Страна: <input type="text" name="countryFilter" id="country"></label><br>
+    <label for="maxSpeed">Макс. скорость: <input type="text" name="maxSpeed" id="maxSpeed"></label><br>
+  Год: <label for="yearFrom">от<input type="text" name="yearOT" id="yearFrom"></label> до<label for="yearTo"><input type="text" name="yearDO" id="yearTo"></label><br>
+  Цена: <label for="priceFrom">от<input type="text" name="priceOT" id="priceFrom"></label> до<label for="priceTo"><input type="text" name="priceDO" id="priceTo"></label><br>
+  </form>
+  <input type="button" value="Найти" id="bthFilter">
+</details>
+<details>
+  <summary>Сортировка</summary>
+  <form id="sort">
+    <p>
+      Первый уровень:
+      <select id="fieldsFirst">
+      </select>
+      По убыванию?<input type="checkbox" id="fieldsFirstDesc">
+    </p>
+    <p>
+      Второй уровень:
+      <select id="fieldsSecond">
+      </select>
+      По убыванию?<input type="checkbox" id="fieldsSecondDesc">
+    </p>
+    <p>
+      Третий уровень:
+      <select id="fieldsThird">
+      </select>
+      По убыванию?<input type="checkbox" id="fieldsThirdDesc">
+    </p>
+  </form>
+  <button id="btnSort">Отсортировать</button>
+</details>
+<h2>Список автомобилей</h2>
+<div id="errorFilter" class="error"></div>
+<table border="1" id="table">
+</table>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AAA</title>
+</head>
+<body>
+
+<script>
+    const getAboveAverageNumbers = (...strings) =>
+        strings
+            .flatMap(str => str.split(' '))
+            .map(word => Number(word))
+            .filter(num => !isNaN(num))
+            .reduce((acc, num, _, arr) => {
+                const avg = arr.reduce((sum, n) => sum + n, 0) / arr.length;
+                return [...acc, ...arr.filter(n => n > avg)];
+            }, [])
+            .filter((num, idx, arr) => arr.indexOf(num) === idx)
+            .join(' ');
+
+
+    const result = getAboveAverageNumbers(
+        "   rand 5 rand 15 rand 25",
+        "10 20 rand 30 rand"
+    );
+
+    console.log(result);
+</script>
+
+</body>
+</html>
